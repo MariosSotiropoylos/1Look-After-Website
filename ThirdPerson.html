@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Ioanna </title>
+  <link rel='icon' href='./assets/favicon.ico'>
+  <link rel="stylesheet" href="styles(SeperatePages).css">
+</head>
+
+<body class="overlay">
+	
+	
+  <div class="overlay-container">
+    <img src="./assets/Background.png" alt="background image" class="bg-img"/> 
+    <img src="./assets/Static.png" alt="Static for Background" class="overlay-bg-img"/>
+	  
+    <a href="./index.html">
+	 <img class='arrow' src="./assets/arrow.png" alt="back arrow">
+	</a>
+   
+    <!-- LEFT COLUMN: BEFORE -->
+    <div class="before-card">
+      <img src="./assets/Before.jpg" alt="Before Face" class="overlay-face-img">
+	  <audio id="beforeAudio" src="./assets/Ioanna1.mp3"></audio>
+      <div class="label">Before</div>
+      <img src="./assets/Waveform.png" alt="Audio Waveform Before" class="waveform">
+	  <div class="white-circle bottom-play"></div>
+      <img id="BeforePlayButton" src="./assets/PlayButton.png" alt="Play Button" class="play-btn bottom-play">
+    </div>
+
+    <!-- MIDDLE COLUMN: AFTER -->
+    <div class="after-card">
+        <div class="label">After</div>
+        <img src="./assets/Waveform.png" alt="Audio Waveform After" class="waveform">
+        <img id="AfterPlayButton" src="./assets/PlayButton.png" alt="Play Button" class="play-btn top-play">
+		<div class="white-circle top-play"></div>
+	    <img src="./assets/After.jpg" alt="After Face" class="overlay-face-img">
+		<audio id="afterAudio" src="./assets/Ioanna2.mp3"></audio>
+    </div>
+
+    <!-- RIGHT COLUMN: INTERVIEW -->
+    <div class="interview-card">
+	   <video id="interviewVideo" class="interview-movie" alt="Interview Person">
+        <source src="./assets/Ioanna.mp4" type="video/mp4">
+       </video>
+      <div class="interview-controls">
+        <img src="./assets/bookmark.png" alt="Bookmark" class="icon icon-smaller">
+        <img id="videoButton" src="./assets/PlayButton.png" alt="Play Button" class="icon">
+        <img src="./assets/heart.png" alt="Heart" class="icon icon-smaller">
+      </div>
+    </div>
+
+  </div>
+  
+  
+  <!--SCRIPTS -->
+  
+  <script src="./scripts/VideoPlayPause.js"></script>
+	
+  <!-- Script for changing the icon for Play & Pause Buttons. DONT place as external because security doesen't allow file searches -->
+<script>
+  const playButtons = document.querySelectorAll('img[alt="Play Button"]');
+
+  playButtons.forEach(button => {
+  button.addEventListener('click', () => 
+	{
+     if (button.src.includes('PlayButton.png')) 
+	 {
+      button.src = './assets/PauseButton.png';
+      button.alt = 'Pause Button';
+     } 
+	 else 
+	 {
+      button.src = './assets/PlayButton.png';
+      button.alt = 'Play Button';
+     }
+    });
+  });
+</script>
+
+  <!-- Script for changing starting / stoping the sounds. DONT place as external -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => 
+  {
+   // BEFORE AUDIO
+     const BeforeAudio = document.getElementById('beforeAudio');
+     const BeforeButton = document.getElementById('BeforePlayButton');
+
+     if (BeforeAudio && BeforeButton) 
+	 {
+       BeforeButton.addEventListener('click', () => 
+	  {
+       if (BeforeAudio.paused) 
+	   {
+        BeforeAudio.play();
+        BeforeButton.src = './assets/PauseButton.png';
+        BeforeButton.alt = 'Pause Button';
+       } 
+	   else 
+	   {
+        BeforeAudio.pause();
+        BeforeButton.src = './assets/PlayButton.png';
+        BeforeButton.alt = 'Play Button';
+       }
+      });
+
+   // Reset icon when audio ends
+       BeforeAudio.addEventListener('ended', () => 
+	   {
+        BeforeButton.src = './assets/PlayButton.png';
+        BeforeButton.alt = 'Play Button';
+       });
+     }
+
+   // AFTER AUDIO
+       const AfterAudio = document.getElementById('afterAudio');
+       const AfterButton = document.getElementById('AfterPlayButton');
+
+       if (AfterAudio && AfterButton) 
+	   {
+        AfterButton.addEventListener('click', () => 
+		{
+         if (AfterAudio.paused) 
+		 {
+          AfterAudio.play();
+          AfterButton.src = './assets/PauseButton.png';
+          AfterButton.alt = 'Pause Button';
+         } 
+		 else 
+		 {
+          AfterAudio.pause();
+          AfterButton.src = './assets/PlayButton.png';
+          AfterButton.alt = 'Play Button';
+         }
+        });
+
+   // Reset icon when audio ends
+       AfterAudio.addEventListener('ended', () => 
+	   {
+        AfterButton.src = './assets/PlayButton.png';
+        AfterButton.alt = 'Play Button';
+       });
+      }
+  });
+</script>
+
+  
+</body>
+</html>

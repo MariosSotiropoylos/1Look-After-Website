@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> 1 Look Later </title>
+  <link rel='icon' href='./assets/favicon.ico'>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="information" id="infoOverlay">
+  <div class="info-box">
+    <p id="INFO"> 
+	Παρακάτω θα δείτε τις οδηγίες που δόθηκαν στους 6 παρατηρητές ξεχωριστά πριν την αλληλεπίδραση τους με τον βασικό παίκτη: 
+	<br> <br>
+    "Θα συμμετάσχεις σε ένα πείραμα παρατήρησης που εξερευνά τη δύναμη και την ασάφεια της πρώτης εντύπωσης. Θα σου ζητηθεί να παρατηρήσεις ένα άτομο που δε γνωρίζεις, χωρίς να του μιλήσεις ή να αλληλεπιδράσεις μαζί του. Η παρατήρηση διαρκεί μερικά λεπτά και γίνεται σε σιωπή.
+    Αμέσως μετά, θα κληθείς να απαντήσεις σε ένα σύντομο ερωτηματολόγιο. Οι ερωτήσεις είναι συμβολικές: σου ζητούν να αποδώσεις αυτό το άτομο με χρώματα, εποχές, συναισθήματα και άλλα καθημερινά σύμβολα. Δεν υπάρχει σωστό ή λάθος. Σκοπός είναι να καταγραφεί η δική σου πρώτη εντύπωση.
+    Στη συνέχεια, θα έχεις την ευκαιρία να γνωρίσεις αυτό το άτομο και να συνομιλήσετε ελεύθερα. Αμέσως μετά, θα απαντήσεις ξανά στο ίδιο ερωτηματολόγιο — αυτήν τη φορά με βάση τη νέα σου εικόνα για το πρόσωπο που γνώρισες.
+    Το πείραμα καταγράφει πώς αλλάζει —ή δεν αλλάζει— η ματιά μας, όταν το άγνωστο πάψει να είναι ξένο.
+	<br> <br>
+	Σκοπός δεν είναι να αποδώσεις την «αλήθεια», αλλά να καταγράψουμε το ίχνος της πρώτης εντύπωσης, όπως γεννιέται μέσα σου."
+    </p>
+
+    <button id="closeInfo"> ΠΙΣΩ </button>
+  </div>
+</div>
+  
+  <div class="container">
+    <img src="./assets/Static.png" alt="Static for Background" class="bg-img"/>
+
+    <div class="circle-bg top-left">
+	   <img id="lens" src="./assets/info.png" alt="burger menu">
+	</div>
+	
+    <div class="circle-bg bottom-right"></div>
+
+    <!-- Face Circle -->
+    <div class="face-circle">
+      <img src="./assets/Before.jpg" alt="a face">
+    </div>
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="./assets/NewLogo.png" alt="Logo">
+    </div>
+
+    <!-- Photos -->
+    <div class="polaroid-gallery">
+      
+      <div class="polaroid">
+        <img src="./assets/polaroid.png" alt="Polaroid Frame" class="frame">
+		<a href="FirstPerson.html">
+         <img src="./assets/First.jpg" alt="Portrait" class="photo">
+		</a>
+      </div>
+	  
+      <div class="polaroid">
+        <img src="./assets/polaroid.png" alt="Polaroid Frame" class="frame">
+	    <a href="SecondPerson.html">
+         <img src="./assets/Second.jpg" alt="Portrait" class="photo">
+		</a>
+      </div>
+	  
+      <div class="polaroid">
+        <img src="./assets/polaroid.png" alt="Polaroid Frame" class="frame">
+	    <a href="ThirdPerson.html">
+         <img src="./assets/Third.jpg" alt="Portrait" class="photo">
+		</a>
+      </div>
+	  
+      <div class="polaroid">
+        <img src="./assets/polaroid.png" alt="Polaroid Frame" class="frame">
+	    <a href="FourthPerson.html">
+         <img src="./assets/Fourth.jpg" alt="Portrait" class="photo">
+		</a>
+      </div>
+	  
+      <div class="polaroid">
+        <img src="./assets/polaroid.png" alt="Polaroid Frame" class="frame">
+		<a href="FifthPerson.html">
+         <img src="./assets/Fifth.jpg" alt="Portrait" class="photo">
+		</a>
+      </div>
+	  
+      <div class="polaroid">
+        <img src="./assets/polaroid.png" alt="Polaroid Frame" class="frame">
+		<a href="SixthPerson.html">
+         <img src="./assets/Sixth.jpg" alt="Portrait" class="photo">
+		</a>
+      </div>
+	  
+    </div>
+
+  <div class="bottom-bar">
+    <p id="web">Web Design: Μάριος Σωτηρόπουλος, Δροσούλα Μαστρογιάννη</p>
+    <p id="graphic">Graphic Design: Γιώργος Ρώσσης</p>
+  </div>
+	
+  </div>
+
+  
+<!--SCRIPTS -->
+  <script src="./scripts/PhotoSelector.js"></script>
+  <script src="./scripts/InfoMenu.js"></script>
+  
+</body>
+</html>
